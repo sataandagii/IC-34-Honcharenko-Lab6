@@ -6,6 +6,40 @@
     <title>Завдання 3</title>
 </head>
 <body>
-    
+    <script>
+        function findExpired(medicines){
+            const notExpired = [];
+
+            for (const medicine in medicines){
+                if(medicines[medicine] > new Date())
+                    notExpired.push(medicine);
+            }
+
+            return notExpired;
+        }
+
+        const medicines = {
+            Агалгін: new Date("2022-05-01"),
+            Ношпа: new Date("2025-07-02"),
+            Аспірин: new Date("2022-08-15"),
+            Аспаркам: new Date("2024-04-18"),
+            Парацетамол: new Date("2023-11-05"),
+            Моксілон: new Date("2024-01-25"),
+            Віферон: new Date("2023-09-30"),
+            Ібуфен: new Date("2024-07-17"),
+            Терафлю: new Date("2025-01-12"),
+            Альфахолін: new Date("2024-12-21")
+        };
+
+        const notExpired = findExpired(medicines);
+        const sortedMedicines = notExpired.sort((a, b) => {
+            const dateA = medicines[a];
+            const dateB = medicines[b];
+            return dateA - dateB; 
+        });
+
+        console.log(sortedMedicines);
+
+    </script>
 </body>
 </html>
