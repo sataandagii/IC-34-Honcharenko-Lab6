@@ -17,6 +17,13 @@
 
         const allTags = tweets.flatMap(tweet => tweet.tags);
 
+        const tagCount = allTags.reduce((acc, tag) => {
+            acc[tag] = (acc[tag] || 0) + 1;
+            return acc;
+        }, {});
+
+        console.log(tagCount);
+
     </script>
 </body>
 </html>
