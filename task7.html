@@ -6,6 +6,47 @@
     <title>Завдання 7</title>
 </head>
 <body>
-    
+    <script>
+        class Client{
+            #login;
+            #email;
+
+            constructor(login, email){
+                this.#login = login;
+                this.#email = email;
+            }
+
+            set login(newLogin){
+                this.#login = newLogin;
+            }
+
+            set email(newEmail){
+                this.#email = newEmail;
+            }
+
+            get login(){
+                return this.#login;
+            }
+
+            get email(){
+                return this.#email;
+            }
+        }
+
+        const client = new Client('Nika', 'student@gmail.com');
+
+        console.log("Початкові значення:");
+        console.log("Логін: " + client.login);
+        console.log("Пошта: " + client.email);
+
+        client.login = "Veronika";
+        client.email = "studentnika@gmail.com";
+
+        console.log("Значеняя після зміни:");
+        console.log("Логін: " + client.login);
+        console.log("Пошта: " + client.email);
+
+
+    </script>
 </body>
 </html>
