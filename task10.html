@@ -6,6 +6,32 @@
     <title>Завдання 10</title>
 </head>
 <body>
-    
+    <script>
+
+    function checkBrackets(someFn){
+        let check = [];
+
+        for(char of someFn){
+
+            if(char == '(' || char == '[' || char == '{'){
+                check.push(char);
+            }
+
+            if (char == ')' && check.pop() != '(' || 
+                char == ']' && check.pop() != '[' || 
+                char == '}' && check.pop() != '{') {
+
+                return false;
+            }
+        }
+
+        return check.length === 0;
+    }    
+
+    console.log("(a+b)-) " + checkBrackets("(a+b)-)"));
+    console.log("[a+b]-{} " + checkBrackets("[a+b]-{}"));
+    console.log("[a+b}-[} " + checkBrackets("[a+b}-[}"));
+
+    </script>
 </body>
 </html>
